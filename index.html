@@ -45,19 +45,6 @@
 <b>WARNING</b> this is a work in progress
 Services are available at https://api.devoxx.com.
 
-
-<h4>Proposal Resource</h4>
-<ul>
-  <li>GET /v2/proposal/event (list enabled events)  DONE</li>
-  <li>GET /v2/proposal/event/{id}   (incl tracks and types)  DONE</li>
-  <li>POST, PUT /v2/proposal/event/{id}/presentation   DONE</li>
-  <li>GET /v2/proposal/event/{id}/presentation/{id}  DONE</li>
-  <li>GET /v2/proposal/event/{id}/presentation?userToken=xxx  TODO (Mike) Returns the event proposals for the given user</li>
-  <li>GET /v2/proposal/event/{id}/tag  (bv java, mongo, ios, ...) with paging  DONE</li>
-  <li>GET /v2/proposal/user </li> 
-  <li>GET /v2/proposal/user?filter=xxx  TODO (Mike) (MAX 10 results)</li>
-</ul>
-
 <h4>Authentication (lead: Stephan)</h4>
 <h5>Register new User</h5>
 <ul>
@@ -85,15 +72,24 @@ Returns User object WITH token DONE</li>
 
 <h4>TODO : OAuth (Stephan) -> SCUM (Jo)</h4>
   
-Admin Resource
+<h4>Admin Resource</h4>
+See <a href="https://github.com/devoxx/cfp-admin/wiki/REST-doc">cfp-admin REST-doc</a>
+for details on the API uses to manages proposals.
+
+
+<h4>Proposal Resource</h4>
 <ul>
-  <li>DELETE /v2/admin/user/{id}  DONE</li>
-  <li>DELETE /v2/admin/event/{id}/presentation{id}  DONE</li>
-  <li>PUT, POST, DELETE /v2/admin/event/  DONE</li>
-  <li>PUT, POST, DELETE /v2/admin/event/{id}/track  DONE</li>
-  <li>PUT, POST, DELETE  /v2/admin/event/{id}/type  DONE</li>
-  <li>PUT, POST, DELETE /v2/admin/event/{id}/tag  DONE</li>
+  <li>GET /v2/proposal/event (list enabled events)  DONE</li>
+  <li>GET /v2/proposal/event/{id}   (incl tracks and types)  DONE</li>
+  <li>POST, PUT /v2/proposal/event/{id}/presentation   DONE</li>
+  <li>GET /v2/proposal/event/{id}/presentation/{id}  DONE</li>
+  <li>GET /v2/proposal/event/{id}/presentation?userToken=xxx  TODO (Mike) Returns the event proposals for the given user</li>
+  <li>GET /v2/proposal/event/{id}/tag  (bv java, mongo, ios, ...) with paging  DONE</li>
+  <li>GET /v2/proposal/user </li> 
+  <li>GET /v2/proposal/user?filter=xxx  TODO (Mike) (MAX 10 results)</li>
 </ul>
+
+
 
 Review Resource
 
