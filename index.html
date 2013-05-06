@@ -42,8 +42,64 @@
 
           <h3>Devoxx REST services.</h3>
 
+<b>WARNING</b> this is a work in progress
+Services are available at https://api.devoxx.com.
+
+
+<h4>Proposal Resource</h4>
+<ul>
+  <li>GET /v2/proposal/event (list enabled events)  DONE</li>
+  <li>GET /v2/proposal/event/{id}   (incl tracks and types)  DONE</li>
+  <li>POST, PUT /v2/proposal/event/{id}/presentation   DONE</li>
+  <li>GET /v2/proposal/event/{id}/presentation/{id}  DONE</li>
+  <li>GET /v2/proposal/event/{id}/presentation?userToken=xxx  TODO (Mike) Returns the event proposals for the given user</li>
+  <li>GET /v2/proposal/event/{id}/tag  (bv java, mongo, ios, ...) with paging  DONE</li>
+  <li>GET /v2/proposal/user </li> 
+  <li>GET /v2/proposal/user?filter=xxx  TODO (Mike) (MAX 10 results)</li>
+</ul>
+
+<h4>Authentication (lead: Stephan)</h4>
+<h5>Register new User</h5>
+<ul>
+  <li>POST http://staging-cfp.devoxx.com/api/v2/auth/register?username=[unique username]&password=[pwd]&email=[unique email]&firstname=[x]&lastname=[x] DONE
+Will also trigger an email with a link to verify the email, however user is already enabled! </li>
+  <li>https://staging-cfp.devoxx.com/activate/code/8af781b83e709181013e7092a414001f
+Redirect after email verification to Angular “landing” page TODO</li>
+</ul>
+
+<h5>Normal Login</h5>
+<ul>
+  <li>POST https://staging-cfp.devoxx.com/api/v2/auth/login?login=[email or username]&password=[password] DONE
+Returns User object WITH token DONE</li>
+</ul>
+
+<h5>Login with Token</h5>
+<ul>
+  <li>POST https://staging-cfp.devoxx.com/api/v2/auth/token?userToken=[token] DONE</li>
+  <li>Return User object WITH token DONE</li>
+  <li>Update User to provide missing user fields (bio, speaker ref, info, share proposal)  TODO</li>
+  <li>Reset Password DONE</li>
+  <li>POST https://staging-cfp.devoxx.com/api/v2/auth/reset/[email] </li>
+  <li>Cleanup Expired Login Tokens  DONE</li>
+</ul>
+
+<h4>TODO : OAuth (Stephan) -> SCUM (Jo)</h4>
+  
+Admin Resource
+<ul>
+  <li>DELETE /v2/admin/user/{id}  DONE</li>
+  <li>DELETE /v2/admin/event/{id}/presentation{id}  DONE</li>
+  <li>PUT, POST, DELETE /v2/admin/event/  DONE</li>
+  <li>PUT, POST, DELETE /v2/admin/event/{id}/track  DONE</li>
+  <li>PUT, POST, DELETE  /v2/admin/event/{id}/type  DONE</li>
+  <li>PUT, POST, DELETE /v2/admin/event/{id}/tag  DONE</li>
+</ul>
+
+Review Resource
+
+
 <p>
-  <a href="api">Devoxx REST services technical documentation</a> is generated using <a href="https://developers.helloreverb.com/swagger/">swagger</a>. 
+  
   
   
 </p>
